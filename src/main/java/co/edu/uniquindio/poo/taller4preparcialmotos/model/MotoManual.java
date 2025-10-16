@@ -1,9 +1,10 @@
 package co.edu.uniquindio.poo.taller4preparcialmotos.model;
 
-public class MotoAutomatica extends MotoDecorator {
+public class MotoManual extends MotoDecorator {
+
     private final Tipo tipo;
 
-    public MotoAutomatica(IMoto motoDecorada, Tipo tipo) {
+    public MotoManual(IMoto motoDecorada, Tipo tipo) {
         super(motoDecorada);
         this.tipo = tipo;
     }
@@ -17,8 +18,15 @@ public class MotoAutomatica extends MotoDecorator {
 
     @Override
     public String getDescripcion() {
+        // Extiende la descripción de la moto decorada
         return motoDecorada.getDescripcion()
                 + "\nTipo: " + tipo
-                + "\nTransmisión: Automática";
+                + "\nTransmisión: Manual (con clutch)";
+    }
+
+    @Override
+    public Tipo getTipo() {
+        return tipo;
     }
 }
+

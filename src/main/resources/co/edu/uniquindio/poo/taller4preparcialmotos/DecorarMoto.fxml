@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300" prefWidth="400" xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.taller4preparcialmotos.controllers.DecorarMotoController">
+
+    <VBox spacing="15" alignment="CENTER"
+          AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20"
+          AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <Label text="Decorar Moto" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Tipo:" />
+            <ChoiceBox fx:id="choiceTipo" prefWidth="200" />
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Transmisión:" />
+            <ChoiceBox fx:id="choiceTransmision" prefWidth="200" />
+        </HBox>
+
+        <Button text="Aplicar Decorador"
+                fx:id="btnAplicar"
+                onAction="#onAplicarDecorador"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </VBox>
+</AnchorPane>

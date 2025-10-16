@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400" prefWidth="500" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.taller4preparcialmotos.controllers.FormularioMotoController">
+
+    <VBox alignment="CENTER" spacing="15" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Registrar Nueva Moto" />
+
+        <TextField fx:id="txtPlaca" prefHeight="32.0" prefWidth="372.0" promptText="Placa" />
+        <TextField fx:id="txtMarca" prefHeight="32.0" prefWidth="460.0" promptText="Marca" />
+        <TextField fx:id="txtModelo" prefHeight="31.0" prefWidth="308.0" promptText="Año (YYYY)" />
+
+
+        <Button fx:id="btnRegistrarMoto" onAction="#onRegistrarMoto"
+                style="-fx-background-color: #4CAF50; -fx-text-fill:
+                white; -fx-font-weight: bold; -fx-pref-width: 150;"
+                text="Registrar Moto" />
+    </VBox>
+</AnchorPane>

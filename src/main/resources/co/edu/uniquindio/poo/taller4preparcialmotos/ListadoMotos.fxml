@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.taller4preparcialmotos.controllers.ListadoMotosController"
+            prefWidth="900" prefHeight="600">
+
+    <VBox alignment="TOP_CENTER" spacing="20"
+          AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20"
+          AnchorPane.rightAnchor="20" AnchorPane.bottomAnchor="20">
+
+        <!-- 🔹 Título -->
+        <Label text="Gestión de Motos"
+               style="-fx-font-size: 26px; -fx-font-weight: bold;"/>
+
+        <!-- 🔹 Botones principales -->
+        <HBox spacing="30" alignment="CENTER">
+            <Button fx:id="btnCrearMoto"
+                    text=" Crear Moto"
+                    onAction="#onCrearMoto"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150; -fx-pref-height: 35;"/>
+
+            <Button fx:id="btnEliminar"
+                    text="Eliminar Moto"
+                    onAction="#onEliminarMoto"
+                    style="-fx-background-color: #E53935; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150; -fx-pref-height: 35;"/>
+
+            <Button fx:id="btnDecorarMoto"
+                    text="Decorar Moto"
+                    onAction="#onDecorarMoto"
+                    style="-fx-background-color: #03A9F4; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150; -fx-pref-height: 35;"/>
+        </HBox>
+
+        <Separator prefWidth="800"/>
+
+        <!-- 🔹 Tabla de motos -->
+        <TableView fx:id="tablaMotos" prefWidth="850" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="colPlaca" text="Placa" prefWidth="120"/>
+                <TableColumn fx:id="colMarca" text="Marca" prefWidth="180"/>
+                <TableColumn fx:id="colModelo" text="Modelo" prefWidth="120"/>
+                <TableColumn fx:id="colTipo" text="Tipo" prefWidth="150"/>
+                <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="260"/>
+            </columns>
+        </TableView>
+
+        <!-- Espaciado inferior -->
+        <Region prefHeight="10"/>
+    </VBox>
+</AnchorPane>

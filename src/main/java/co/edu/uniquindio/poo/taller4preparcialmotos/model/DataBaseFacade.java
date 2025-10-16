@@ -11,7 +11,7 @@ public class DataBaseFacade {
         db = DataBase.getInstance();
     }
 
-    public Moto CrearMoto(String placa, String marca, Year modelo) {
+    public Moto crearMoto(String placa, String marca, Year modelo) {
         Moto moto =new Moto
                 .Builder()
                 .placa(placa)
@@ -34,13 +34,15 @@ public class DataBaseFacade {
         return Collections.unmodifiableList(db.getListaMotos());
     }
 
-    // Buscar moto por algún criterio (opcional)
-    public IMoto buscarPorModelo(String modelo) {
-        for (IMoto moto : db.getListaMotos()) {
-            if (moto.getModelo.equalsIgnoreCase(modelo)) {
-                return moto;
-            }
-        }
-        return null;
+    public List<IMoto> obtenerMotos() {
+        return db.getListaMotos();
+    }
+
+    public void eliminarMoto(IMoto moto) {
+        db.eliminarMoto(moto);
+    }
+
+    public DataBase getDb() {
+        return db;
     }
 }

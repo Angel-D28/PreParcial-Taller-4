@@ -1,33 +1,64 @@
 package co.edu.uniquindio.poo.taller4preparcialmotos.model;
 
+import java.time.Year;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-//Implementacion del singleton
 public class DataBase {
-    private static DataBase db;
-    private final List<IMoto> listaMotos;
+
+    private static DataBase instance;
+
+    private final List<IMoto> listaMotos = new ArrayList<>();
 
     private DataBase() {
-        listaMotos = new ArrayList<>();
+        Moto moto1 = new Moto.Builder()
+                .placa("ABC123")
+                .marca("Yamaha")
+                .modelo(Year.of(2020))
+                .build();
+
+        Moto moto2 = new Moto.Builder()
+                .placa("XYZ789")
+                .marca("Honda")
+                .modelo(Year.of(2022))
+                .build();
+
+        IMoto moto3 = new MotoManual(moto1, Tipo.COMBUSTION);
+        IMoto moto4 = new MotoAutomatica(moto2, Tipo.ELECTRICA);
+
+        listaMotos.add(moto1);
+        listaMotos.add(moto2);
+        listaMotos.add(moto3);
+        listaMotos.add(moto4);
     }
 
+    // Método público para obtener la instancia única(Singleton)
     public static DataBase getInstance() {
-        if (db == null) {
-            db = new DataBase();
+        if (instance == null) {
+            instance = new DataBase();
         }
-        return db;
+        return instance;
+    }
+
+    public void reemplazarMoto(IMoto anterior, IMoto nueva) {
+        int index = listaMotos.indexOf(anterior);
+        if (index != -1) {
+            listaMotos.set(index, nueva);
+        }
+    }
+
+
+
+    public List<IMoto> getListaMotos() {
+        return Collections.unmodifiableList(listaMotos);
     }
 
     public void agregarMoto(IMoto moto) {
         listaMotos.add(moto);
     }
 
-    public static DataBase getDb() {
-        return db;
-    }
-
-    public List<IMoto> getListaMotos() {
-        return listaMotos;
+    public void eliminarMoto(IMoto moto) {
+        listaMotos.remove(moto);
     }
 }

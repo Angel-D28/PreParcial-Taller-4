@@ -7,4 +7,6 @@ module co.edu.uniquindio.poo.taller4preparcialmotos {
     exports co.edu.uniquindio.poo.taller4preparcialmotos;
     exports co.edu.uniquindio.poo.taller4preparcialmotos.model;
     opens co.edu.uniquindio.poo.taller4preparcialmotos.model to javafx.fxml;
+    exports co.edu.uniquindio.poo.taller4preparcialmotos.controllers;
+    opens co.edu.uniquindio.poo.taller4preparcialmotos.controllers to javafx.fxml;
 }

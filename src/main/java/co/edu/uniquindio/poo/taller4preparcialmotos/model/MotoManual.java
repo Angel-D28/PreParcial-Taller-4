@@ -5,24 +5,27 @@ import javafx.beans.property.StringProperty;
 
 import java.time.Year;
 
-public class MotoAutomatica extends MotoDecorator {
+public class MotoManual extends MotoDecorator {
+
     private final Tipo tipo;
 
-    public MotoAutomatica(IMoto motoDecorada, Tipo tipo) {
+    public MotoManual(IMoto motoDecorada, Tipo tipo) {
         super(motoDecorada);
         this.tipo = tipo;
     }
 
     @Override
     public String encender() {
-        return "Enciende oprimiendo el freno.";
+        String msj ="Enciende oprimiendo el freno." ;
+        System.out.println(msj);
+        return msj;
     }
 
     @Override
     public String getDescripcion() {
         return motoDecorada.getDescripcion()
                 + "\nTipo: " + tipo
-                + "\nTransmisión: Automática";
+                + "\nTransmisión: Manual (con clutch)";
     }
 
     @Override
@@ -43,4 +46,6 @@ public class MotoAutomatica extends MotoDecorator {
     /*public StringProperty descripcionProperty() {
         return new SimpleStringProperty(getDescripcion());
     }*/
+
 }
+

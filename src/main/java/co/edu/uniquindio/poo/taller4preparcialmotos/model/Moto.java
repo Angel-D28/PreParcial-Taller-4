@@ -45,10 +45,10 @@ public class Moto implements IMoto{
     }
 
     @Override
-    public String getDescripcion(){
-        return"Placa: "+placa+"\nMarca: "+marca+"\nModelo: "+modelo
-                +" Moto Manual(con Clutch)";
+    public String getDescripcion() {
+        return "Placa: " + placa + ", Marca: " + marca + ", Modelo: " + modelo ;
     }
+
 
     public String getPlaca() {
         return placa;
@@ -62,13 +62,17 @@ public class Moto implements IMoto{
         return modelo;
     }
 
+    public String getModeloString() {
+        return modelo != null ? modelo.toString() : "";
+    }
+
+    @Override
+    public Tipo getTipo() {
+        return null;
+    }
 
     @Override
     public String toString() {
-        return "Moto{" +
-                "placa='" + placa + '\'' +
-                ", marca='" + marca + '\'' +
-                ", modelo=" + modelo +
-                '}';
+        return getDescripcion();
     }
 }
